@@ -7,37 +7,69 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        /* General Styling */
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to bottom right, #1c1c1c, #0d7377);
+            background: linear-gradient(135deg, #1c1c1c, #0d7377);
+            background-size: 200% 200%;
+            animation: gradientShift 10s infinite ease-in-out;
             color: white;
             margin: 0;
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            position: relative;
         }
+
+        /* Gradient Animation */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Particle Effect Container */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
         header {
             text-align: center;
             padding: 60px 20px;
-            background: #212121;
+            background: rgba(33, 33, 33, 0.8);
             color: #e0e1dd;
+            border-radius: 8px;
+            margin: 20px;
         }
+
         header h1 {
             font-size: 3.5rem;
             margin-bottom: 15px;
         }
+
         header p a {
             color: #5bc0be;
             text-decoration: none;
         }
+
         header p a:hover {
             text-decoration: underline;
         }
+
         nav {
-            background: #0f2027;
+            background: rgba(15, 32, 39, 0.8);
             padding: 10px;
             display: flex;
             justify-content: center;
             gap: 15px;
+            border-radius: 8px;
+            margin: 20px;
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
@@ -46,57 +78,51 @@
             border-radius: 5px;
             transition: background 0.3s;
         }
+
         nav a:hover {
             background: #5bc0be;
         }
+
         section {
             padding: 60px 20px;
             text-align: center;
         }
+
         section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: #5bc0be;
         }
-        .skills, .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .skill, .project {
-            background: #1c3c50;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            width: 300px;
-            text-align: left;
-        }
-        .project img {
-            width: 100%;
-            border-radius: 8px;
-        }
+
         footer {
             text-align: center;
             padding: 20px;
-            background: #0f2027;
+            background: rgba(15, 32, 39, 0.9);
         }
+
         .social-icons a {
             color: #5bc0be;
             margin: 0 10px;
             font-size: 1.5rem;
             transition: transform 0.3s;
         }
+
         .social-icons a:hover {
             transform: scale(1.2);
         }
     </style>
 </head>
 <body>
+    <!-- Particle Effect -->
+    <div id="particles-js"></div>
+
+    <!-- Header Section -->
     <header>
         <h1>Hi, I'm Vivesh!</h1>
         <p>A skilled Cloud Engineer specializing in modern cloud technologies. <a href="https://www.ukg.com/" target="_blank">Working as Sr. Cloud Specialist @ UKG</a>.</p>
     </header>
+
+    <!-- Navigation Bar -->
     <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -105,10 +131,14 @@
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
     </nav>
+
+    <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
         <p>Problem-solver and Cloud Optimization Specialist with 4+ years of experience in ensuring the reliability and performance of cloud environments. Skilled in troubleshooting, system maintenance, and leveraging technologies like Aviatrix and Terraform.</p>
     </section>
+
+    <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
         <div class="skills">
@@ -200,44 +230,64 @@
         </table>
 
     </section>
+
+    <!-- Projects Section -->
     <section id="projects">
         <h2>Projects</h2>
         <div class="projects">
             <div class="project">
                 <img src="https://via.placeholder.com/300" alt="In-progress">
                 <h3>In-progress</h3>
-               </div>
-         </div>
+            </div>
+        </div>
     </section>
-    <section id="resume">
-            <h2>Resume</h2>
-            <p> Click Here to :- <a href="https://574n13y.github.io/portfolio//pdf/vivesh-Resume.pdf" class="button" target="_blank"> View Resume</a
-            </p>
-        </section>
-    <section id="contact">
-    <h2>Get in Touch</h2>
-    <p>I'd love to hear from you! You can email me directly at <a href="mailto:viveshrokzz@outlook.com">viveshrokzz@outlook.com</a> or connect with me on these platforms:</p>
-    <div class="social-icons">
-        <a href="https://vivesh.vercel.app/" target="_blank" aria-label="Website">
-            <i class="fas fa-globe" title="Website"></i>
-        </a>
-        <a href="https://github.com/574n13y" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github" title="GitHub"></i>
-        </a>
-        <a href="https://gitlab.com/574n13y" target="_blank" aria-label="GitLab">
-            <i class="fab fa-gitlab" title="GitLab"></i>
-        </a>
-        <a href="https://dev.to/574n13y" target="_blank" aria-label="Dev.to">
-            <i class="fab fa-dev" title="Dev.to"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/vivesh-tyagi-9085a9a9" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin" title="LinkedIn"></i>
-        </a>
-    </div>
+
+    <!-- Resume Section -->
+    <section id="resume" style="padding: 20px; color: white;">
+    <h2>My CV</h2>
+    <p>Want to know more about my experience and skills? Download or view my full resume below.</p>
+    <a href="https://574n13y.github.io/portfolio/pdf/vivesh-Resume.pdf" target="_blank">
+        <button style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+            View My Resume
+        </button>
+    </a>
+    <p>Click to open the PDF in a new tab.</p>
    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>I'd love to hear from you! You can email me directly at <a href="mailto:viveshrokzz@outlook.com">viveshrokzz@outlook.com</a> or connect with me on these platforms:</p>
+        <div class="social-icons">
+            <a href="https://vivesh.vercel.app/" target="_blank" aria-label="Website"><i class="fas fa-globe" title="Website"></i></a>
+            <a href="https://github.com/574n13y" target="_blank" aria-label="GitHub"><i class="fab fa-github" title="GitHub"></i></a>
+            <a href="https://gitlab.com/574n13y" target="_blank" aria-label="GitLab"><i class="fab fa-gitlab" title="GitLab"></i></a>
+            <a href="https://dev.to/574n13y" target="_blank" aria-label="Dev.to"><i class="fab fa-dev" title="Dev.to"></i></a>
+            <a href="https://www.linkedin.com/in/vivesh-tyagi-9085a9a9" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin" title="LinkedIn"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Made with ❤️ by Vivesh</p>
     </footer>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+        // Initialize Particles.js
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80 },
+                color: { value: "#5bc0be" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                line_linked: { enable: true, distance: 150, color: "#5bc0be", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6 }
+            }
+        });
+    </script>
 </body>
 </html>
